@@ -1,0 +1,843 @@
+:root {
+  --olive-moss: #5D593C;
+  --linden-glow: #aa9d48;
+  --dusty-rose: #D29E9E;
+  --rosewood: #904d49;
+  --warm-sand: #cbb39b;
+  --deep-espresso: #3C2F2F;
+  --misty-blue: #A9BCC1;
+  --cream-paper: #F7F3EE;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--deep-espresso);
+  color: var(--cream-paper);
+  overflow-x: hidden;
+}
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 5% 24px;
+  isolation: isolate;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(60, 47, 47, 0.25) 0%,
+    rgba(60, 47, 47, 0.12) 45%,
+    rgba(60, 47, 47, 0.35) 100%
+  );
+  z-index: -1;
+}
+
+/* ВЕРХНЯЯ НАВИГАЦИЯ */
+.hero-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 12px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav a {
+  color: var(--cream-paper);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: var(--dusty-rose);
+}
+
+/* БЛОК С НАЗВАНИЕМ И БОКОВЫМИ ВЕНЗЕЛЯМИ */
+.brand-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 22px; /* Опускает название ниже от верхнего края */
+  margin-bottom: 10px;
+}
+
+.brand-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3.2rem, 5.2vw, 4.7rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: #FFFFFF;
+  -webkit-text-stroke: 0.7px rgba(255, 255, 255, 0.9);
+  text-shadow: 
+    0 3px 14px rgba(28, 20, 20, 0.9),
+    0 0 32px rgba(28, 20, 20, 0.65);
+  white-space: nowrap;
+}
+
+/* Декоративные «штучки» по бокам (линии, ромбики и веточки) */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--warm-sand);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
+}
+
+.ornament-line {
+  width: clamp(45px, 9vw, 130px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FFFFFF);
+}
+
+.ornament.right .ornament-line {
+  background: linear-gradient(90deg,#FFFFFF, transparent);
+}
+
+.ornament-diamond {
+  width: 6px;
+  height: 6px;
+  background-color:#FFFFFF;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.ornament svg {
+  width: 54px;
+  height: 22px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+/* ОСНОВНАЯ СЕТКА */
+.hero-main {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  padding: 24px 0;
+}
+
+/* Левый блок с текстом */
+.hero-text-block {
+  background: rgba(60, 47, 47, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(203, 179, 155, 0.3);
+  border-radius: 20px;
+  padding: 42px;
+}
+
+.editorial-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--warm-sand);
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: #FFFFFF;
+  margin-bottom: 22px;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--dusty-rose);
+}
+
+.hero-subtitle {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--cream-paper);
+  max-width: 520px;
+  margin-bottom: 34px;
+}
+
+/* Кнопки */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-primary {
+  background-color: var(--rosewood);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 15px 34px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--rosewood);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(60, 47, 47, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: #7c3f3b;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: rgba(247, 243, 238, 0.12);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--warm-sand);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--warm-sand);
+  color: var(--deep-espresso);
+}
+
+/* ПРАВАЯ ЖУРНАЛЬНАЯ КАРТОЧКА */
+.editorial-card {
+  background-color: var(--cream-paper);
+  color: var(--deep-espresso);
+  padding: 22px;
+  border-radius: 16px;
+  max-width: 340px;
+  margin-left: auto;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(203, 179, 155, 0.6);
+}
+
+.card-top-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--olive-moss);
+  margin-bottom: 12px;
+}
+
+.card-photo-wrapper {
+  width: 100%;
+  height: 210px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.card-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15);
+}
+
+.card-palette {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 26px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.card-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--deep-espresso);
+  text-align: center;
+}
+
+/* НИЖНЯЯ СТРОКА */
+.hero-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 14px;
+}
+
+.scroll-indicator {
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ */
+@media (max-width: 960px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .editorial-card {
+    margin: 0 auto;
+  }
+
+  .ornament-line {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-logo {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .ornament {
+    display: none;
+  }
+}
+/* ================= СЕКЦИЯ 2: МОИ ДОСТИЖЕНИЯ (Эстетика и Фото) ================= */
+.achievements-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FAF7F2;
+  color: #3C2F2F;
+  display: flex;
+  align-items: center;
+  padding: 80px 5%;
+}
+
+.achievements-container {
+  max-width: 1100px; /* Немного уже для журнального вида */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #5D593C;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 600;
+  color: #3C2F2F;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #6B5E5B;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Общие настройки сетки */
+.achievements-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Базовая карточка с мягким скруглением */
+.achievement-card {
+  flex: 1 1 300px;
+  background-color: #FFFFFF;
+  border-radius: 30px; /* Мягкое, эстетичное скругление */
+  padding: 40px;
+  box-shadow: 0 12px 30px rgba(93, 89, 60, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(203, 179, 155, 0.2);
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(93, 89, 60, 0.09);
+}
+
+/* Стандартный текстовый блок (как в прошлом варианте) */
+.achievement-card.card-standard {
+  justify-content: center;
+  max-width: 340px;
+}
+
+/* БЛОКИ С ФОТОГРАФИЯМИ */
+/* Общие настройки для фото-блоков */
+.card-photo-left,
+.card-photo-right {
+  flex: 1 1 500px; /* Они шире, занимают почти всю строку */
+  max-width: 100%;
+  padding: 0; /* Убираем padding, чтобы фото было в край */
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.card-photo-left .card-photo-wrap,
+.card-photo-right .card-photo-wrap {
+  flex: 0 0 40%; /* Фото занимает 40% ширины */
+  height: 100%;
+  min-height: 260px;
+}
+
+.card-photo-left .card-photo-wrap img,
+.card-photo-right .card-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-photo-left .card-text-content,
+.card-photo-right .card-text-content {
+  flex: 0 0 60%; /* Текст занимает 60% ширины */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Специфика для фото слева */
+.card-photo-left .card-photo-wrap {
+  border-radius: 30px 0 0 30px; /* Скругление только слева */
+}
+
+/* Специфика для фото справа */
+.card-photo-right .card-photo-wrap {
+  border-radius: 0 30px 30px 0; /* Скругление только справа */
+}
+.card-photo-right {
+  flex-direction: row-reverse; /* Меняем местами фото и текст */
+}
+
+
+/* Типографика */
+.card-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #904d49;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+.achievement-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3C2F2F;
+  margin-bottom: 12px;
+}
+
+.achievement-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #6B5E5B;
+}
+
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ */
+@media (max-width: 960px) {
+  .achievements-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* На мобильных все карточки становятся вертикальными */
+  .achievement-card,
+  .card-photo-left,
+  .card-photo-right {
+    flex-direction: column;
+    max-width: 340px;
+    padding: 40px;
+  }
+
+  .card-photo-left .card-photo-wrap,
+  .card-photo-right .card-photo-wrap {
+    flex: 0 0 200px; /* Фиксированная высота фото на мобилках */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Возвращаем скругления для фото-блоков */
+  .card-photo-left .card-photo-wrap,
+  .card-photo-right .card-photo-wrap {
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .card-photo-left .card-text-content,
+  .card-photo-right .card-text-content {
+    padding: 0;
+  }
+  
+  .card-photo-right {
+    flex-direction: column; /* Отменяем row-reverse на мобильных */
+  }
+  
+  .achievements-section {
+    padding: 60px 5%;
+  }
+}
+  
+/* ================= СЕКЦИЯ 2 С КРУЖЕВНЫМИ РАМКАМИ ================= */
+.achievements-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 5%;
+  background-color: #FAF7F2; /* Пастельный фон */
+  overflow: hidden;
+}
+
+/* ================= СЕКЦИЯ 2: КОМПАКТНАЯ ПОД ОДИН ЭКРАН ================= */
+/* ================= СЕКЦИЯ 2: КОМПАКТНЫЙ БЛОК С КРУЖЕВОМ ================= */
+.achievements-section {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 115px 5%;
+  background-color: #FAF7F2;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ВЕРХНЯЯ КРУЖЕВНАЯ РАМКА */
+.achievements-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+  background-image: url('lace-border.png');
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-size: auto 105px;
+  filter: brightness(0.75) sepia(0.25);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* НИЖНЯЯ КРУЖЕВНАЯ РАМКА */
+.achievements-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+  background-image: url('lace-border2.png');
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto 105px;
+  filter: brightness(0.75) sepia(0.25);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.achievements-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Компактная шапка секции */
+.section-header {
+  text-align: center;
+  margin-bottom: 24px; /* Уменьшили отступ до карточек (было 60px) */
+}
+
+.section-label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #5D593C;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.2vw, 2.8rem); /* Чуть компактнее заголовок */
+  font-weight: 600;
+  color: #3C2F2F;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #6B5E5B;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* Сетка карточек */
+.achievements-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 18px; /* Уменьшили расстояние между карточками (было 30px) */
+  justify-content: center;
+}
+
+/* Базовая карточка */
+.achievement-card {
+  flex: 1 1 280px;
+  background-color: #FFFFFF;
+  border-radius: 22px;
+  padding: 22px 26px; /* Компактные внутренние отступы (было 40px) */
+  box-shadow: 0 10px 25px rgba(93, 89, 60, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(203, 179, 155, 0.25);
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(93, 89, 60, 0.09);
+}
+
+.achievement-card.card-standard {
+  justify-content: center;
+  max-width: 340px;
+}
+
+/* Карточки с фото */
+.card-photo-left,
+.card-photo-right {
+  flex: 1 1 500px;
+  max-width: 100%;
+  padding: 0;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.card-photo-left .card-photo-wrap,
+.card-photo-right .card-photo-wrap {
+  flex: 0 0 38%;
+  height: auto;
+  min-height: 165px; /* Уменьшили высоту фото-блока (было 260px) */
+  max-height: 190px;
+}
+
+.card-photo-left .card-photo-wrap img,
+.card-photo-right .card-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-photo-left .card-text-content,
+.card-photo-right .card-text-content {
+  flex: 0 0 62%;
+  padding: 20px 26px; /* Компактные отступы текста */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-photo-left .card-photo-wrap {
+  border-radius: 22px 0 0 22px;
+}
+
+.card-photo-right .card-photo-wrap {
+  border-radius: 0 22px 22px 0;
+}
+
+.card-photo-right {
+  flex-direction: row-reverse;
+}
+
+/* Типографика внутри карточек */
+.card-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: #904d49;
+  margin-bottom: 6px;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.achievement-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #3C2F2F;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.achievement-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  font-weight: 300;
+  color: #6B5E5B;
+}
+
+/* Адаптив для мобильных (на телефонах возвращаем свободный скролл) */
+@media (max-width: 960px) {
+  .achievements-section {
+    height: auto;
+    max-height: none;
+    padding: 110px 5%;
+  }
+
+  .achievements-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .achievement-card,
+  .card-photo-left,
+  .card-photo-right {
+    flex-direction: column;
+    max-width: 340px;
+    padding: 25px;
+  }
+
+  .card-photo-left .card-photo-wrap,
+  .card-photo-right .card-photo-wrap {
+    flex: 0 0 180px;
+    max-height: 180px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 16px;
+  }
+
+  .card-photo-left .card-text-content,
+  .card-photo-right .card-text-content {
+    padding: 0;
+  }
+
+  .card-photo-right {
+    flex-direction: column;
+  }
+}
+
+/* Карточка с кувшинкой */
+.card-with-flower {
+    position: relative;
+    overflow: visible;
+}
+
+/* Кувшинка в углу */
+.card-waterlily {
+    position: absolute;
+
+    width: 200px;
+    height: auto;
+
+    top: -35px;
+    right: -25px;
+
+    z-index: 5;
+    object-fit: contain;
+
+    transform-origin: 70% 80%;
+
+    animation: flower-sway 3.5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+/* Анимация покачивания */
+@keyframes flower-sway {
+    0% {
+        transform: rotate(25deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(35deg) translateY(-12px);
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(-5px);
+    }
+
+    75% {
+        transform: rotate(35deg) translateY(-15px);
+    }
+
+    100% {
+        transform: rotate(25deg) translateY(0);
+    }
+}

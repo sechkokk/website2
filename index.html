@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GARDEN WONDERS — Ботаническая студия флористики</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="hero-section">
+    <!-- ФОН -->
+    <img src="img1.png" alt="Пруд с кувшинками" class="hero-bg">
+    <div class="hero-overlay"></div>
+
+    <!-- Верхняя панель: аккуратная навигация справа -->
+    <header class="hero-header">
+      <nav class="header-nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О студии</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <!-- Опущенный ниже заголовок с декоративными веточками по бокам -->
+    <div class="brand-banner">
+      <div class="ornament left">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <!-- Ботанический завиток -->
+        <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 12C16 12 22 4 36 4C46 4 50 12 58 12C50 12 46 20 36 20C22 20 16 12 2 12Z" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M36 4C39 8 39 16 36 20" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="52" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <div class="brand-logo">Garden Wonders</div>
+
+      <div class="ornament right">
+        <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M58 12C44 12 38 4 24 4C14 4 10 12 2 12C10 12 14 20 24 20C38 20 44 12 58 12Z" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M24 4C21 8 21 16 24 20" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="8" cy="12" r="2" fill="currentColor"/>
+        </svg>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line"></span>
+      </div>
+    </div>
+
+    <!-- Центральная журнальная композиция -->
+    <main class="hero-main">
+      
+      <!-- Левая колонка -->
+      <div class="hero-text-block">
+        <span class="editorial-label">BOTANICAL ATELIER • АВТОРСКАЯ ФЛОРИСТИКА</span>
+        
+        <h1 class="hero-title">
+          Живая поэзия <br>
+          <em>в каждом лепестке</em>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Создаем сложные фактурные букеты из редких садовых цветов, вдохновленные дикой природой и тихой красотой старых оранжерей.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#order" class="btn-primary">Заказать букет</a>
+          <a href="#collection" class="btn-outline">Сезонная коллекция</a>
+        </div>
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="editorial-card">
+        <div class="card-top-meta">
+          
+        </div>
+
+        <div class="card-photo-wrapper">
+          <img src="img5.jpg" alt="Вдохновение природы">
+        </div>
+
+        <div class="card-palette">
+          <span class="swatch" style="background-color: #5D593C;" title="Muted Olive Moss"></span>
+          <span class="swatch" style="background-color: #D29E9E;" title="Dusty Rose Blush"></span>
+          <span class="swatch" style="background-color: #904d49;" title="Faded Rosewood"></span>
+          <span class="swatch" style="background-color: #aa9d48;" title="Linden Glow"></span>
+          <span class="swatch" style="background-color: #A9BCC1;" title="Misty Pond Blue"></span>
+        </div>
+
+        <p class="card-caption">
+          «Мы собираем не просто цветы, а настроение тихого утра у лесного пруда».
+        </p>
+      </div>
+
+    </main>
+
+    <!-- Нижняя панель -->
+    <footer class="hero-footer">
+      <a href="#next" class="scroll-indicator">Листать ниже ↓</a>
+    </footer>
+  </section>
+
+
+
+
+  <!-- ВТОРАЯ СЕКЦИЯ: Мои достижения (Скругленные блоки + Фото) -->
+  <section id="achievements" class="achievements-section">
+    <div class="achievements-container">
+      
+      <div class="section-header">
+        <h2 class="section-title">Мои достижения</h2>
+        <p class="section-subtitle">Путь создания эстетики, признанной экспертами и нашими прекрасными клиентами.</p>
+      </div>
+
+      <!-- Flexbox-сетка с нестандартными блоками -->
+      <div class="achievements-grid">
+        
+        <!-- Карточка 1: Фотография слева, текст справа -->
+        <div class="achievement-card card-photo-left">
+          <div class="card-photo-wrap">
+            <!-- ЗАМЕНИ НА СВОЮ ЭСТЕТИЧНУЮ ФОТО -->
+            <img src="photo_1.jpg" alt="Флорист за работой">
+          </div>
+          <div class="card-text-content">
+            <div class="card-number">01</div>
+            <h3 class="achievement-title">Авторские показы</h3>
+            <p class="achievement-desc">Участие в престижных botanical-выставках. Создание атмосферы.</p>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Обычный блок -->
+        <div class="achievement-card card-standard">
+          <div class="card-number">02</div>
+          <h3 class="achievement-title">1200+ композиций</h3>
+          <p class="achievement-desc">Уникальные букеты из редких сортов садовых роз и зелени.</p>
+        </div>
+
+        <!-- Карточка 3: С кувшинкой -->
+<div class="achievement-card card-standard card-with-flower">
+
+  <img src="waterlily.png" alt="" class="card-waterlily">
+
+  <div class="card-number">03</div>
+  <h3 class="achievement-title">Школа флористики</h3>
+  <p class="achievement-desc">Авторский курс по природной сборке букетов.</p>
+
+</div>
+
+        <!-- Карточка 4: Фотография справа, текст слева -->
+        <div class="achievement-card card-photo-right">
+          <div class="card-text-content">
+            <div class="card-number">04</div>
+            <h3 class="achievement-title">Эко-стандарты</h3>
+            <p class="achievement-desc">Отказ от пластика в пользу биоразлагаемых материалов и крафта.</p>
+          </div>
+          <div class="card-photo-wrap">
+            <!-- ЗАМЕНИ НА СВОЮ ЭСТЕТИЧНУЮ ФОТО (например, упаковка) -->
+            <img src="img7.jpg" alt="Эко-упаковка">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
